@@ -6,6 +6,11 @@ This portfolio website was made to showcase all my side projects I do along side
 
 ### Languages Used
 - HTML
-- SCSS
+- CSS
 - React
 - Javascript
+
+### Color Palette
+- #FFB61E (Yellow)
+- #444B6E (Purple)
+- #D7DAE5 (Gray)
