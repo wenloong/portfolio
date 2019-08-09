@@ -1,0 +1,28 @@
+.home-wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #FFB61E;
+   width: 50vw;
+   height: 100vh;
+}
+
+.home-wrapper h1 {
+   margin: 0;
+   color: #fff;
+   text-align: center;
+   font-size: 2.5rem;
+   
+}
+
+.home-elements-wrapper {
+   margin: 10px 0;
+}
+
+.profile-image-wrapper {
+   text-align: center;
+}
+
+.profile-image-wrapper img {
+   border-radius: 100%;
+}
