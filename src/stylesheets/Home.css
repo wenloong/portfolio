@@ -1,13 +1,32 @@
 .home-wrapper {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: #FFB61E;
-   width: 50vw;
-   height: 100vh;
 }
 
-.home-wrapper h1 {
+.home-left-wrapper {
+   display: inline-block;
+   align-items: center;
+   width: 50vw;
+   height: 100vh;
+   background-color: #FFB61E;
+}
+
+.home-right-wrapper {
+   position: absolute;
+   display: inline-block;
+   top: 15%;
+   right: 0;
+   width: 60vw;
+   height: 65%;
+   background-color: #444B6E;
+   color: #FFFFFF;
+   font-size: 2em;
+}
+
+.desc-wrapper {
+   width: 90%;
+   margin: 100px auto;
+}
+
+.home-left-wrapper h1 {
    margin: 0;
    color: #fff;
    text-align: center;
@@ -15,8 +34,19 @@
    
 }
 
+.greeting-wrapper,
+.profile-image-wrapper {
+   margin-top: 100px;
+}
+
+.greeting-wrapper h1 {
+   font-size: 4rem;
+   font-weight: 500;
+   letter-spacing: -2px;
+}
+
 .home-elements-wrapper {
-   margin: 10px 0;
+   margin: 0;
 }
 
 .profile-image-wrapper {
