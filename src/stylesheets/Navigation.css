@@ -1,7 +1,7 @@
 .navigation-wrapper{
    position: fixed;
    left: 0;
-   top: -20%;
+   top: -35%;
    bottom: 0;
    width: 60px;
    display: flex;
@@ -45,7 +45,7 @@
    color: #fff;
    font-family: 'Roboto', sans-serif;
    font-weight: 500;
-   font-size: 1.2rem;
+   font-size: 1.5rem;
    outline: none !important;
 }
 
