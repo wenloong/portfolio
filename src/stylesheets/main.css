@@ -120,6 +120,25 @@ and (min-width : 320px) {
       max-width: 100%;
       border-radius: 15px;
       margin: 5px 0 0;
+      transition: .3s;
+   }
+
+   .project-item-info {
+      position: absolute;
+      background-color: #FFF;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transition: opacity 750ms ease-in-out;
+   }
+
+   .project-item-info .is-visible {
+
+      opacity: 1;
    }
 
    .profile-social {
@@ -133,18 +152,10 @@ and (min-width : 320px) {
       height: 20px;
    }
 
-   .project-item .test {
-      filter: blur(3px);
-      opacity: .5;
-      transform: scale(.98);
-      box-shadow: none;
-   }
-
-   .project-item .test {
-      filter: blur(0px);
-      opacity: 1;
-      transform: scale(1);
+   .project-item:hover img:hover {
+      transform: scale(1.1);
       box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
+      transition: .3s;
    }
 }
 
