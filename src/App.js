@@ -1,8 +1,7 @@
 //Import Libraries
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import ProjectItem from './components/ProjectItem';
-import ProjectItemInfo from './components/ProjectItemInfo';
+import ProjectItemList from './components/ProjectItemList';
 
 //Import SVGs
 import Github from './assets/svg/Github';
@@ -10,6 +9,8 @@ import LinkedIn from './assets/svg/LinkedIn';
 
 //Import Images
 import GSITravel from './assets/images/gsitravel.png';
+import FlappyShark from './assets/images/flappyshark.png';
+import Decryption from './assets/images/decryption.png';
 
 //Import Stylesheets
 import './stylesheets/main.css';
@@ -54,28 +55,66 @@ const ParticleOption = {
 }
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { show: new Array(2).fill(false) };
-  }
-
-  isOpen = (index) => {
-    var clone = Object.assign( {}, this.state.show );
-    switch(clone[index]) {
-      case false:
-        clone[index] = true
-        break;
-      case true:
-        clone[index] = false
-        break;
-    }
-    this.setState({ show: clone });
-  }
-
   state = {
-    isOpen: [false,false,false]
+    projectitems: [
+      {
+        id: 1,
+        image: GSITravel,
+        title: 'GSI Travel',
+        weblink: 'www.gsitravel.com.my',
+        gitlink: 'https://github.com/wenloong/gsitravel',
+        tools: ['react', 'css', 'javascript'],
+        description: 'I developed a website for a travel agency company in Malaysia using the tools above to allow the owners to show their presense on the web. It’s main purpose is to allow customers an easy and pleasing user experience while browsing through the available tour packages that they offer. It also allows the customer to book a tour package online without growing through the hassle of calling or going to the office in person.'
+      },
+      {
+        id: 2,
+        image: FlappyShark,
+        title: 'Flappy Shark',
+        weblink: '',
+        gitlink: 'https://github.com/wenloong/Flappy-Shark',
+        tools: ['unity', 'c#'],
+        description: 'A flappy bird clone'
+      },
+      {
+        id: 3,
+        image: Decryption,
+        title: 'Decryption Algorithm',
+        weblink: '',
+        gitlink: 'https://github.com/wenloong/CS111/tree/master/RSA%20Assignment',
+        tools: ['Java'],
+        description: 'Just a flappy bird clone'
+      },
+      {
+        id: 4,
+        image: "http://www.graphicsfuel.com/wp-content/uploads/2015/11/branding-mockup-psd.jpg",
+        title: 'Flappy Shark',
+        weblink: '(No Website Link)',
+        gitlink: 'https://github.com/wenloong/Flappy-Shark',
+        tools: ['unity', 'c#'],
+        description: 'Just a flappy bird clone'
+      },
+      {
+        id: 5,
+        //image: GSITravel,
+        image: "http://www.pixeden.com/media/k2/galleries/754/001-businesscard-mockup-presentation-psd-free-resource.jpg",
+        title: 'Flappy Shark',
+        weblink: '(No Website Link)',
+        gitlink: 'https://github.com/wenloong/Flappy-Shark',
+        tools: ['unity', 'c#'],
+        description: 'Just a flappy bird clone'
+      },
+      {
+        id: 6,
+        //image: GSITravel,
+        image: "http://www.pixeden.com/media/k2/galleries/511/001-business-card-mockup-vol-22-box-brand-psd.jpg",
+        title: 'Flappy Shark',
+        weblink: '(No Website Link)',
+        gitlink: 'https://github.com/wenloong/Flappy-Shark',
+        tools: ['unity', 'c#'],
+        description: 'Just a flappy bird clone'
+      }
+    ]
   }
-
 
   render() {
     return (
@@ -115,71 +154,8 @@ export default class App extends Component {
 
         <div className="project-wrapper">
           <div className="project-item-wrapper">
-            <ProjectItem test="1"/>
-            <ProjectItem test="2"/>
-            <div className="project-item">
-              
-              <div className="project-item">
-                <img onClick={(e) => this.setState({ isOpen: true })} alt="placeholder" src={GSITravel}/>
-              </div>
-
-              <ProjectItemInfo isOpen={this.state.isOpen} onClose={(e) => this.setState({isOpen: false})}>
-                <div className="project-title">
-                  Just a test
-                </div>
-              </ProjectItemInfo>
-
-            </div>
-
-            <div className="project-item">
-              
-              <div className="project-item">
-                <img onClick={(e) => this.setState({ isOpen: true })} alt="placeholder" src={GSITravel}/>
-              </div>
-
-              { this.state.show[0] && <ProjectItemInfo> Testing </ProjectItemInfo>}
-              
-
-            </div>
-
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/754/001-businesscard-mockup-presentation-psd-free-resource.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/640/001-business-card-cardboard-mockup-presentation-wall-free-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.graphicsfuel.com/wp-content/uploads/2015/11/branding-mockup-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/511/001-business-card-mockup-vol-22-box-brand-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.graphicsfuel.com/wp-content/uploads/2015/11/branding-mockup-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/511/001-business-card-mockup-vol-22-box-brand-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/754/001-businesscard-mockup-presentation-psd-free-resource.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/640/001-business-card-cardboard-mockup-presentation-wall-free-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/754/001-businesscard-mockup-presentation-psd-free-resource.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/640/001-business-card-cardboard-mockup-presentation-wall-free-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.graphicsfuel.com/wp-content/uploads/2015/11/branding-mockup-psd.jpg"/>
-            </div>
-            <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/511/001-business-card-mockup-vol-22-box-brand-psd.jpg"/>
-            </div>
+            <ProjectItemList projectitems={ this.state.projectitems }/>
           </div>
-
         </div>
 
         <Particles className="particle-background" params={ ParticleOption }/>
