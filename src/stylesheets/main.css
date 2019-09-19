@@ -116,18 +116,20 @@ and (min-width : 320px) {
       transition:.2s all; 
    }
 
-   .project-item img {
+   .project-item > img {
       max-width: 100%;
       border-radius: 15px;
       margin: 5px 0 0;
       transition: .3s;
    }
 
-   .project-item-info {
+   .project-item-info-wrapper {
       position: absolute;
       background-color: #FFF;
       top: 0;
       left: 0;
+      right: 0;
+      bottom: 0;
       opacity: 1;
       z-index: 1;
       width: 100%;
@@ -137,7 +139,6 @@ and (min-width : 320px) {
    }
 
    .project-item-info .is-visible {
-
       opacity: 1;
    }
 
@@ -152,11 +153,63 @@ and (min-width : 320px) {
       height: 20px;
    }
 
-   .project-item:hover img:hover {
+   .project-item:hover > img:hover {
       transform: scale(1.1);
       box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
       transition: .3s;
    }
+
+   .project-item-info {
+      padding: 20px;
+   }
+
+
+   .project-item-info img {
+      width: 200px;
+      height: auto;
+   }
+
+   .project-item-title,
+   .project-item-website {
+      display: inline-block;
+   }
+
+   .project-item-title {
+      color: #333333;
+      font-weight: 600;
+      font-size: 20px;
+   }
+
+   .project-item-website {
+      color: #525252;
+      font-size: 15px;
+      margin-left: 5px;
+      margin-top: 10px;
+   }
+
+   .project-item-heading {
+      color: #333333;
+      font-weight: 600;
+      font-size: 17px;
+      margin: 10px 0;
+   }
+
+   .project-item-tools-icon {
+      display: inline-block;
+      margin: 0 10px;
+   }
+
+   .project-item-tools-icon svg {
+      width: 25px;
+      height: 25px;
+      overflow: visible;
+   }
+
+   .project-item-description p {
+      color: #525252;
+   }
+
+   
 }
 
 /* Smartphones (portrait) ----------- */

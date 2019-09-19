@@ -63,7 +63,7 @@ export default class App extends Component {
         title: 'GSI Travel',
         weblink: 'www.gsitravel.com.my',
         gitlink: 'https://github.com/wenloong/gsitravel',
-        tools: ['react', 'css', 'javascript'],
+        tools: ['React', 'CSS', 'JavaScript'],
         description: 'I developed a website for a travel agency company in Malaysia using the tools above to allow the owners to show their presense on the web. It’s main purpose is to allow customers an easy and pleasing user experience while browsing through the available tour packages that they offer. It also allows the customer to book a tour package online without growing through the hassle of calling or going to the office in person.'
       },
       {
