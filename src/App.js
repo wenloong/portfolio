@@ -1,9 +1,17 @@
+//Import Libraries
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
+import ProjectItem from './components/ProjectItem';
+import ProjectItemInfo from './components/ProjectItemInfo';
 
+//Import SVGs
 import Github from './assets/svg/Github';
 import LinkedIn from './assets/svg/LinkedIn';
 
+//Import Images
+import GSITravel from './assets/images/gsitravel.png';
+
+//Import Stylesheets
 import './stylesheets/main.css';
 
 const ParticleOption = {
@@ -46,25 +54,28 @@ const ParticleOption = {
 }
 
 export default class App extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      isHidden: false
-    };
-
-    this.openDiv = this.openDiv.bind(this);
-    this.closeDiv = this.closeDiv.bind(this);
+  constructor(props) {
+    super(props);
+    this.state = { show: new Array(2).fill(false) };
   }
 
-  openDiv = () => {
-    const { isHidden } = this.state;
-    this.setState({ isHidden: !isHidden })
+  isOpen = (index) => {
+    var clone = Object.assign( {}, this.state.show );
+    switch(clone[index]) {
+      case false:
+        clone[index] = true
+        break;
+      case true:
+        clone[index] = false
+        break;
+    }
+    this.setState({ show: clone });
   }
 
-  closeDiv = () => {
-    const { isHidden } = this.state;
-    this.setState({ isHidden: !isHidden })
+  state = {
+    isOpen: [false,false,false]
   }
+
 
   render() {
     return (
@@ -104,16 +115,33 @@ export default class App extends Component {
 
         <div className="project-wrapper">
           <div className="project-item-wrapper">
+            <ProjectItem test="1"/>
+            <ProjectItem test="2"/>
             <div className="project-item">
-              <button onClick={this.openDiv}>LOL</button>
-              { this.state.isHidden && <ProjectItemInfo/>}
+              
+              <div className="project-item">
+                <img onClick={(e) => this.setState({ isOpen: true })} alt="placeholder" src={GSITravel}/>
+              </div>
 
-              <img onClick={this.openDiv} alt="placeholder" src="http://www.graphicsfuel.com/wp-content/uploads/2015/11/branding-mockup-psd.jpg"/>
+              <ProjectItemInfo isOpen={this.state.isOpen} onClose={(e) => this.setState({isOpen: false})}>
+                <div className="project-title">
+                  Just a test
+                </div>
+              </ProjectItemInfo>
+
             </div>
 
             <div className="project-item">
-              <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/511/001-business-card-mockup-vol-22-box-brand-psd.jpg"/>
+              
+              <div className="project-item">
+                <img onClick={(e) => this.setState({ isOpen: true })} alt="placeholder" src={GSITravel}/>
+              </div>
+
+              { this.state.show[0] && <ProjectItemInfo> Testing </ProjectItemInfo>}
+              
+
             </div>
+
             <div className="project-item">
               <img alt="placeholder" src="http://www.pixeden.com/media/k2/galleries/754/001-businesscard-mockup-presentation-psd-free-resource.jpg"/>
             </div>
@@ -160,8 +188,3 @@ export default class App extends Component {
   }
 }
 
-const ProjectItemInfo = () => (
-  <div className="project-item-info">
-    <p onClickCapture={this.closeDiv}>Testing</p>
-  </div>
-)
