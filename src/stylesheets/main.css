@@ -135,11 +135,6 @@ and (min-width : 320px) {
       width: 100%;
       height: 100%;
       overflow: hidden;
-      transition: opacity 750ms ease-in-out;
-   }
-
-   .project-item-info .is-visible {
-      opacity: 1;
    }
 
    .profile-social {
@@ -153,14 +148,44 @@ and (min-width : 320px) {
       height: 20px;
    }
 
-   .project-item:hover > img:hover {
-      transform: scale(1.1);
+   .project-item:hover img:hover {
+      transform: scale(1);
       box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
       transition: .3s;
    }
 
+   .project-item-wrapper:hover > .project-item:not(:hover) {
+      transform: scale(.98);
+      filter: blur(3px);
+   }
+   
+   .project-item-wrapper button {
+      display: inline-block;
+      margin-left: 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 5px 11px;
+      vertical-align: middle;
+   }
+
    .project-item-info {
       padding: 20px;
+   }
+
+   .project-item-info {
+      transition-property: all;
+      transition-duration: 1s;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+   }
+
+   .project-item-info.visible {
+      opacity: 1;
+
+      transition: opacity 1s ease-in;
    }
 
 

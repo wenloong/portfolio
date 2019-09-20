@@ -10,6 +10,27 @@ export default class ProjectItem extends Component {
       isOpen: false
    }
 
+   constructor() {
+      super();
+      this.state = {
+         opacity: 0
+      }
+   }
+
+   onHide() {
+      this.setState({
+         opacity: 0
+      });
+   }
+
+   onShow() {
+      this.setState({
+         opacity: 1
+      });
+   }
+
+   onShow
+
    selectSVG(svg) {
       switch(svg) {
          case 'React':
@@ -29,7 +50,7 @@ export default class ProjectItem extends Component {
             <img onClick={(e) => this.setState({ isOpen: true })} alt={ this.props.projectitem.title } src={ this.props.projectitem.image }/>
 
             <ProjectItemInfo isOpen={this.state.isOpen} onClose={(e) => this.setState({isOpen: false})}>
-               <div className="project-item-info">
+               <div className={"project-item-info"}>
                   <img alt={ this.props.projectitem.title } src= { this.props.projectitem.image }/>
                   
                   <div className="project-item-info-row">
