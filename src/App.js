@@ -17,6 +17,9 @@ import Decryption from './assets/images/decryption.png';
 import CruzHacks from './assets/images/cruzhack.png';
 import HackDavis from './assets/images/hackdavis.png';
 
+//Import Desktop Images
+import GSITravelDesktop from './assets/images/gsitravel_desktop.png';
+
 //Import Stylesheets
 import './stylesheets/main.css';
 
@@ -65,6 +68,7 @@ export default class App extends Component {
       {
         id: 1,
         image: GSITravel,
+        image_desktop: GSITravelDesktop,
         title: 'GSI Travel',
         weblink: 'http://www.gsitravel.com.my',
         gitlink: 'https://github.com/wenloong/gsitravel',

@@ -60,8 +60,9 @@ export default class ProjectItem extends Component {
             <ProjectItemInfo isOpen={this.state.isOpen} onClose={(e) => this.setState({isOpen: false})}>
                <div className={"project-item-info"}>
                   <Slug delay={100}>
-                     <img alt={ this.props.projectitem.title } src= { this.props.projectitem.image }/>
-                     
+                     <img className="project-item-image-mobile" alt={ this.props.projectitem.title } src= { this.props.projectitem.image }/>
+                     <img className="project-item-image-desktop" alt={ this.props.projectitem.title } src= { this.props.projectitem.image_desktop }/>
+
                      <div className="project-item-info-row">
                         <p className="project-item-title">{ this.props.projectitem.title }</p>
                         <div className="project-item-links">
