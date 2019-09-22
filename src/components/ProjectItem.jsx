@@ -4,7 +4,15 @@ import ProjectItemInfo from './ProjectItemInfo';
 
 import ReactSVG from '../assets/svg/ReactSVG';
 import CSS from '../assets/svg/CSS';
+import CSharp from '../assets/svg/CSharp';
 import JavaScript from '../assets/svg/Javascript';
+import Java from '../assets/svg/Java';
+import Node from '../assets/svg/Node';
+import Express from '../assets/svg/Express';
+import MongoDB from '../assets/svg/MongoDB';
+import GCP from '../assets/svg/GCP';
+import Firebase from '../assets/svg/Firebase';
+import Unity from '../assets/svg/Unity';
 
 export default class ProjectItem extends Component {
    state = {
@@ -17,8 +25,24 @@ export default class ProjectItem extends Component {
             return(<ReactSVG/>);
          case 'CSS':
             return(<CSS/>);
+         case 'CSharp':
+            return(<CSharp/>);
          case 'JavaScript':
             return(<JavaScript/>);
+         case 'Java':
+            return(<Java/>);
+         case 'Node':
+            return(<Node/>);
+         case 'Express':
+            return(<Express/>);
+         case 'MongoDB':
+            return(<MongoDB/>);
+         case 'GCP':
+            return(<GCP/>);
+         case 'Firebase':
+            return(<Firebase/>);
+         case 'Unity':
+            return(<Unity/>);
          default:
             return null;
       }
@@ -27,20 +51,6 @@ export default class ProjectItem extends Component {
    render() {
       const { isOpen } = this.state
       return(
-         // <div onClick={this.toggleProjectItem} className="project-item">
-         //    <img alt={ this.props.projectitem.title } src={ this.props.projectitem.image }/>
-
-         //       <div show={!this.state.isOpen} className="project-item-info">
-         //          <Slug delay={500}>
-         //             <button onClose={this.toggleProjectItem} className="close">
-         //                X
-         //             </button>
-         //             <p>Testing</p>
-         //          </Slug>
-         //       </div>
-
-
-         // </div>
          <div className="project-item">
             <img onClick={(e) => this.setState({ isOpen: true })} alt={ this.props.projectitem.title } src={ this.props.projectitem.image }/>
 

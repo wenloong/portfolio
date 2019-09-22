@@ -11,6 +11,8 @@ import LinkedIn from './assets/svg/LinkedIn';
 import GSITravel from './assets/images/gsitravel.png';
 import FlappyShark from './assets/images/flappyshark.png';
 import Decryption from './assets/images/decryption.png';
+import CruzHacks from './assets/images/cruzhack.png';
+import HackDavis from './assets/images/hackdavis.png';
 
 //Import Stylesheets
 import './stylesheets/main.css';
@@ -72,8 +74,8 @@ export default class App extends Component {
         title: 'Flappy Shark',
         weblink: '',
         gitlink: 'https://github.com/wenloong/Flappy-Shark',
-        tools: ['unity', 'c#'],
-        description: 'A flappy bird clone'
+        tools: ['Unity', 'CSharp'],
+        description: 'A Flappy Bird clone'
       },
       {
         id: 3,
@@ -82,36 +84,25 @@ export default class App extends Component {
         weblink: '',
         gitlink: 'https://github.com/wenloong/CS111/tree/master/RSA%20Assignment',
         tools: ['Java'],
-        description: 'Just a flappy bird clone'
+        description: ''
       },
       {
         id: 4,
-        image: "http://www.graphicsfuel.com/wp-content/uploads/2015/11/branding-mockup-psd.jpg",
-        title: 'Flappy Shark',
-        weblink: '(No Website Link)',
-        gitlink: 'https://github.com/wenloong/Flappy-Shark',
-        tools: ['unity', 'c#'],
-        description: 'Just a flappy bird clone'
+        image: CruzHacks,
+        title: 'CruzHacks 2019',
+        weblink: 'https://devpost.com/software/hackerschedule-4srnp7',
+        gitlink: 'https://github.com/SeijiEmery/hack-your-schedule',
+        tools: ['React', 'CSS', 'JavaScript', 'MongoDB', 'Node', 'Express'],
+        description: ''
       },
       {
         id: 5,
-        //image: GSITravel,
-        image: "http://www.pixeden.com/media/k2/galleries/754/001-businesscard-mockup-presentation-psd-free-resource.jpg",
-        title: 'Flappy Shark',
-        weblink: '(No Website Link)',
-        gitlink: 'https://github.com/wenloong/Flappy-Shark',
-        tools: ['unity', 'c#'],
-        description: 'Just a flappy bird clone'
-      },
-      {
-        id: 6,
-        //image: GSITravel,
-        image: "http://www.pixeden.com/media/k2/galleries/511/001-business-card-mockup-vol-22-box-brand-psd.jpg",
-        title: 'Flappy Shark',
-        weblink: '(No Website Link)',
-        gitlink: 'https://github.com/wenloong/Flappy-Shark',
-        tools: ['unity', 'c#'],
-        description: 'Just a flappy bird clone'
+        image: HackDavis,
+        title: 'HackDavis 2019',
+        weblink: 'https://devpost.com/software/idogtify',
+        gitlink: 'https://github.com/wenloong/dogtor-app',
+        tools: ['React', 'CSS', 'GCP', 'Firebase'],
+        description: 'Idogtify was built in a 2 days hackathon at UC Davis. It aim to assist owners in understanding common health issues that arises in their pet.'
       }
     ]
   }
