@@ -7,6 +7,9 @@ import ProjectItemList from './components/ProjectItemList';
 import Github from './assets/svg/Github';
 import LinkedIn from './assets/svg/LinkedIn';
 
+//Import PDFs
+import Resume from './data/CliffordNg_Resume.pdf';
+
 //Import Images
 import GSITravel from './assets/images/gsitravel.png';
 import FlappyShark from './assets/images/flappyshark.png';
@@ -63,7 +66,7 @@ export default class App extends Component {
         id: 1,
         image: GSITravel,
         title: 'GSI Travel',
-        weblink: 'www.gsitravel.com.my',
+        weblink: 'http://www.gsitravel.com.my',
         gitlink: 'https://github.com/wenloong/gsitravel',
         tools: ['React', 'CSS', 'JavaScript'],
         description: 'I developed a website for a travel agency company in Malaysia using the tools above to allow the owners to show their presense on the web. It’s main purpose is to allow customers an easy and pleasing user experience while browsing through the available tour packages that they offer. It also allows the customer to book a tour package online without growing through the hassle of calling or going to the office in person.'
@@ -75,16 +78,16 @@ export default class App extends Component {
         weblink: '',
         gitlink: 'https://github.com/wenloong/Flappy-Shark',
         tools: ['Unity', 'CSharp'],
-        description: 'A Flappy Bird clone'
+        description: 'This was a side project built to learn more about Unity and Game Development physics. I created a clone of Flappy Bird following tutorials online and made a few level tweaks to its original code.'
       },
       {
         id: 3,
         image: Decryption,
-        title: 'Decryption Algorithm',
-        weblink: '',
+        title: 'Decryption',
+        weblink: null,
         gitlink: 'https://github.com/wenloong/CS111/tree/master/RSA%20Assignment',
         tools: ['Java'],
-        description: ''
+        description: 'Completed for a school assignment, I created a program to decrypt an encrypted message using Java. I chose Java over other programming languages in this case to make use of its BigInteger library.'
       },
       {
         id: 4,
@@ -93,7 +96,7 @@ export default class App extends Component {
         weblink: 'https://devpost.com/software/hackerschedule-4srnp7',
         gitlink: 'https://github.com/SeijiEmery/hack-your-schedule',
         tools: ['React', 'CSS', 'JavaScript', 'MongoDB', 'Node', 'Express'],
-        description: ''
+        description: 'CruzHacks was a 3 days hackathon held at UC Santa Cruz. I joined a group of students to create a productiviy web app, each having their own roles and duty. During this time, I was working on an unfamiliar part of web development which utilized Socket.io to communicate React with MongoDB.'
       },
       {
         id: 5,
@@ -130,7 +133,9 @@ export default class App extends Component {
 
           <div className="profile-links">
             <div className="profile-resume">
-              <p>Résumé</p>
+              <a href={ Resume } target="_blank" rel="noopener noreferrer" class="resume-button">
+                Résumé
+              </a>
             </div>
             <div className="profile-social">
               <div className="github-wrapper">

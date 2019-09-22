@@ -1,7 +1,9 @@
+//Import Libraries
 import React, { Component } from 'react';
-import { Slug, Fade }  from './Primitives';
+import { Slug }  from './Primitives';
 import ProjectItemInfo from './ProjectItemInfo';
 
+//Import SVGs
 import ReactSVG from '../assets/svg/ReactSVG';
 import CSS from '../assets/svg/CSS';
 import CSharp from '../assets/svg/CSharp';
@@ -13,6 +15,8 @@ import MongoDB from '../assets/svg/MongoDB';
 import GCP from '../assets/svg/GCP';
 import Firebase from '../assets/svg/Firebase';
 import Unity from '../assets/svg/Unity';
+import { Link, NoLink } from '../assets/svg/Link';
+import GithubDark from '../assets/svg/GithubDark';
 
 export default class ProjectItem extends Component {
    state = {
@@ -49,20 +53,25 @@ export default class ProjectItem extends Component {
    };
 
    render() {
-      const { isOpen } = this.state
       return(
          <div className="project-item">
             <img onClick={(e) => this.setState({ isOpen: true })} alt={ this.props.projectitem.title } src={ this.props.projectitem.image }/>
 
             <ProjectItemInfo isOpen={this.state.isOpen} onClose={(e) => this.setState({isOpen: false})}>
                <div className={"project-item-info"}>
-                  <Fade show={isOpen} delay={isOpen? 500: 0}>
                   <Slug delay={100}>
                      <img alt={ this.props.projectitem.title } src= { this.props.projectitem.image }/>
                      
                      <div className="project-item-info-row">
                         <p className="project-item-title">{ this.props.projectitem.title }</p>
-                        <p className="project-item-website">{ this.props.projectitem.weblink }</p>
+                        <div className="project-item-links">
+                           <a href={ this.props.projectitem.weblink } target="_blank" rel="noopener noreferrer">
+                              { this.props.projectitem.weblink == null? <NoLink/> : <Link/> }
+                           </a>
+                           <a href={ this.props.projectitem.gitlink } target="_blank" rel="noopener noreferrer">
+                              <GithubDark/>
+                           </a>
+                        </div>
                      </div>
 
                      <div className="project-item-tools">
@@ -80,17 +89,6 @@ export default class ProjectItem extends Component {
                         <p>{ this.props.projectitem.description }</p>
                      </div>
                   </Slug>
-                  </Fade>
-                  <Fade
-                     show={!isOpen}
-                     from={{ opacity: 0, transform: 'translate3d(0,140px,0)' }}
-                     enter={{ opacity: 1, transform: 'translate3d(0,0px,0)' }}
-                     leave={{ opacity: 0, transform: 'translate3d(0,-50px,0)' }}
-                     delay={isOpen? 0 : 400}>
-                     <div className="default">
-                        <div style={{ zIndex: 1 }}>TEST</div>
-                     </div>
-                  </Fade>
                </div>
             </ProjectItemInfo>
          </div>
