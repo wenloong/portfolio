@@ -19,6 +19,10 @@ import HackDavis from './assets/images/hackdavis.png';
 
 //Import Desktop Images
 import GSITravelDesktop from './assets/images/gsitravel_desktop.png';
+import FlappySharkDesktop from './assets/images/flappyshark_desktop.png';
+import DecryptionDesktop from './assets/images/decryption_desktop.png';
+import CruzHacksDesktop from './assets/images/cruzhacks_desktop.png';
+import HackDavisDesktop from './assets/images/hackdavis_desktop.png';
 
 //Import Stylesheets
 import './stylesheets/main.css';
@@ -78,6 +82,7 @@ export default class App extends Component {
       {
         id: 2,
         image: FlappyShark,
+        image_desktop: FlappySharkDesktop,
         title: 'Flappy Shark',
         weblink: '',
         gitlink: 'https://github.com/wenloong/Flappy-Shark',
@@ -87,6 +92,7 @@ export default class App extends Component {
       {
         id: 3,
         image: Decryption,
+        image_desktop: DecryptionDesktop,
         title: 'Decryption',
         weblink: null,
         gitlink: 'https://github.com/wenloong/CS111/tree/master/RSA%20Assignment',
@@ -96,6 +102,7 @@ export default class App extends Component {
       {
         id: 4,
         image: CruzHacks,
+        image_desktop: CruzHacksDesktop,
         title: 'CruzHacks 2019',
         weblink: 'https://devpost.com/software/hackerschedule-4srnp7',
         gitlink: 'https://github.com/SeijiEmery/hack-your-schedule',
@@ -105,6 +112,7 @@ export default class App extends Component {
       {
         id: 5,
         image: HackDavis,
+        image_desktop: HackDavisDesktop,
         title: 'HackDavis 2019',
         weblink: 'https://devpost.com/software/idogtify',
         gitlink: 'https://github.com/wenloong/dogtor-app',

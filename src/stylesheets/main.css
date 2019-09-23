@@ -88,36 +88,6 @@ and (min-width : 320px) {
       transition: all .35s;
    }
 
-   .resume-button:before,
-   .resume-button:after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 100%;
-      top: -100%;
-      left: 0;
-      background: #FFF;
-      z-index: -1;
-      transition: all .35s;
-   }
-
-   .resume-button:before{
-      opacity: .5;
-    }
-    
-    .resume-button:after{
-      transition-delay: .2s;
-    }
-    
-    .resume-button:hover{
-      color: #2C3E50;
-    }
-    
-    .resume-button:hover:before,
-    .resume-button:hover:after{
-      top: 0;
-    }
-
    .project-wrapper {
       display: block;
       position: absolute;
@@ -185,6 +155,7 @@ and (min-width : 320px) {
       z-index: 1;
       width: 100%;
       min-height: 100% !important;
+      scrollbar-width: none;
       overflow: scroll;
    }
 
@@ -198,17 +169,6 @@ and (min-width : 320px) {
       width: 25px;
       height: 25px;
    }
-
-   .project-item:hover img:hover {
-      transform: scale(1);
-      box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
-      transition: .3s;
-   }
-
-   .project-item-wrapper:hover > .project-item:not(:hover) {
-      transform: scale(.98);
-      filter: blur(3px);
-   }
    
    .project-item-wrapper button {
       display: inline-block;
@@ -221,10 +181,11 @@ and (min-width : 320px) {
       border-radius: 15px;
       padding: 5px 9px;
       vertical-align: middle;
+      outline: none !important;
    }
 
    .project-item-info {
-      padding: 10px 20px;
+      padding: 10px 20px 30px;
    }
 
 
@@ -452,10 +413,51 @@ and (min-width : 1224px) {
       height: 50px;
    }
 
+   .project-item:hover img:hover {
+      transform: scale(1);
+      box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
+      transition: .3s;
+   }
+
+   .project-item-wrapper:hover > .project-item:not(:hover) {
+      transform: scale(.98);
+      filter: blur(3px);
+   }
+
    .resume-button {
       margin-top: 25px;
       padding: 10px 20px;
       font-size: 20px;
+   }
+
+   .resume-button:before,
+   .resume-button:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: -100%;
+      left: 0;
+      background: #FFF;
+      z-index: -1;
+      transition: all .35s;
+   }
+
+   .resume-button:before{
+      opacity: .5;
+   }
+    
+   .resume-button:after{
+      transition-delay: .2s;
+   }
+    
+   .resume-button:hover{
+      color: #2C3E50;
+   }
+    
+   .resume-button:hover:before,
+   .resume-button:hover:after{
+      top: 0;
    }
 
    .github-wrapper,
