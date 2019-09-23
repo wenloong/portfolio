@@ -84,7 +84,7 @@ export default class App extends Component {
         image: FlappyShark,
         image_desktop: FlappySharkDesktop,
         title: 'Flappy Shark',
-        weblink: '',
+        weblink: null,
         gitlink: 'https://github.com/wenloong/Flappy-Shark',
         tools: ['Unity', 'CSharp'],
         description: 'This was a side project built to learn more about Unity and Game Development physics. I created a clone of Flappy Bird following tutorials online and made a few level tweaks to its original code.'
