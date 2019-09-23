@@ -13,7 +13,12 @@ This portfolio website was made to showcase all my side projects I do along side
 - React
 - Javascript
 
+### Libraries Used
+- React Spring
+- Parallax Js
+
 ### Color Palette
-- #FFB61E (Yellow)
-- #444B6E (Purple)
-- #D7DAE5 (Gray)
+- #2C3E50 (Background Blue)
+- #FFFFFF
+- #333333 (Heading Gray)
+- #525252 (Paragraph Light Gray)
