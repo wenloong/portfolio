@@ -13,6 +13,11 @@ This portfolio website was made to showcase all my side projects I do along side
 - React
 - Javascript
 
+### Tools Used
+- Git
+- Figma
+- VS Code
+
 ### Libraries Used
 - React Spring
 - Parallax Js
@@ -22,3 +27,6 @@ This portfolio website was made to showcase all my side projects I do along side
 - #FFFFFF
 - #333333 (Heading Gray)
 - #525252 (Paragraph Light Gray)
+
+### Known Issues
+- Some bug that happens on iPhone6s that doesn't space out the items correctly. Might be a -webkit- stylerule missing.
