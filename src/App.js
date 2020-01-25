@@ -16,6 +16,7 @@ import FlappyShark from './assets/images/flappyshark.png';
 import Decryption from './assets/images/decryption.png';
 import CruzHacks from './assets/images/cruzhack.png';
 import HackDavis from './assets/images/hackdavis.png';
+import RoseHack from './assets/images/rosehack.png';
 
 //Import Desktop Images
 import GSITravelDesktop from './assets/images/gsitravel_desktop.png';
@@ -23,6 +24,7 @@ import FlappySharkDesktop from './assets/images/flappyshark_desktop.png';
 import DecryptionDesktop from './assets/images/decryption_desktop.png';
 import CruzHacksDesktop from './assets/images/cruzhacks_desktop.png';
 import HackDavisDesktop from './assets/images/hackdavis_desktop.png';
+import RoseHackDesktop from './assets/images/rosehack_desktop.png';
 
 //Import Stylesheets
 import './stylesheets/main.css';
@@ -76,7 +78,7 @@ export default class App extends Component {
         title: 'GSI Travel',
         weblink: 'http://www.gsitravel.com.my',
         gitlink: 'https://github.com/wenloong/gsitravel',
-        tools: ['React', 'CSS', 'JavaScript'],
+        tools: ['React', 'CSS', 'JavaScript', 'Firebase'],
         description: 'I developed a website for a travel agency company in Malaysia using the tools above to allow the owners to show their presense on the web. It’s main purpose is to allow customers an easy and pleasing user experience while browsing through the available tour packages that they offer. It also allows the customer to book a tour package online without growing through the hassle of calling or going to the office in person.'
       },
       {
@@ -118,6 +120,16 @@ export default class App extends Component {
         gitlink: 'https://github.com/wenloong/dogtor-app',
         tools: ['React', 'CSS', 'GCP', 'Firebase'],
         description: 'Idogtify was built in a 2 days hackathon at UC Davis. It aim to assist owners in understanding common health issues that arises in their pet.'
+      },
+      {
+        id: 6,
+        image: RoseHack,
+        image_desktop: RoseHackDesktop,
+        title: 'RoseHack 2020',
+        weblink: 'https://devpost.com/software/uclassroom',
+        gitlink: 'https://github.com/wenloong/UClassRoom',
+        tools: ['React', 'CSS', 'GCP', 'Firebase', 'JavaScript'],
+        description: 'UClassRoom (UCR) was built with intent to aid students and professors during or out of lecture sessions. This will benefit hearing impaired students as well as students with social anxiety by connecting the students to the professor through a webapp that we developed. Making use of speech-to-text technology, we were able to allow text to show up on screen as the professor lectures the classroom.'
       }
     ]
   }
