@@ -117,6 +117,7 @@ const App = () => {
 
   function resize() {
     windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
   }
 
   window.onresize = resize;
