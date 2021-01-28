@@ -41,7 +41,7 @@ and (max-device-width : 480px) {
 and (min-width : 320px) {
 /* Styles */
    body {
-      background-color: #2C3E50;
+      background-color: #333333;
       margin: 0;
       padding: 0;
    }
