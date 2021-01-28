@@ -113,6 +113,7 @@ const App = () => {
   const [x, setX] = useState(0);
   const [margin, setMargin] = useState(0);
   var windowWidth = window.innerWidth;
+  var windowHeight = window.innerHeight;
 
   function resize() {
     windowWidth = window.innerWidth;
@@ -163,7 +164,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="Profile__wrapper">
+      <div className="Profile__wrapper" style={windowWidth >= 1224 ? {height: `calc(${windowHeight}px - 160px)`} : {height: `calc(${windowHeight}px - 100px)`}}>
         <div className="Profile">
           <div className="Profile__outer">
           <div className="Profile__top">
@@ -212,7 +213,7 @@ const App = () => {
             <div className="Work__container--inner">
                 {projects.projectitems.map((project, index) => {
                   return (
-                    <div key={index} className="Work__item" style={{transform: `translateX(calc(${x}% + ${margin}px))`}}>
+                    <div key={index} className="Work__item" style={{transform: `translateX(calc(${x}% + ${margin}px))`, WebkitTransform: `translateX(calc(${x}% + ${margin}px))`}}>
                       <WorkItem work={project}/>
                     </div>
                   )

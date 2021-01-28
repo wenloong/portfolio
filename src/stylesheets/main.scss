@@ -18,6 +18,10 @@ body {
    margin: 0;
 }
 
+html {
+   height: -webkit-fill-available;
+}
+
 p {
    margin: 0;
 }
@@ -31,7 +35,6 @@ p {
     height: calc(100vh - 40px);
     width: calc(100vw - 40px);
     max-height: 100vh;
-    overflow: hidden;
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -43,7 +46,7 @@ and (min-width : 280px) {
         &__wrapper {
             box-shadow: $shadow-inner;
             border-radius: $border;
-            height: calc(100vh - 100px);
+            // height: calc(100vh - 100px);
             padding: 30px 25px;
             overflow-y: scroll;
             
@@ -71,8 +74,10 @@ and (min-width : 280px) {
                     width: 20px;
                     height: 20px;
     
-                    &:hover {
-                        box-shadow: $shadow-inner-small;
+                    @media (hover: hover) {
+                        &:hover {
+                            box-shadow: $shadow-inner-small;
+                        }
                     }
                 }
             }
@@ -132,7 +137,7 @@ and (min-width : 280px) {
             width: 100%;
             margin-right: 50px;
             transition: 0.75s;
-            -webkit-transition: -webkit-transform 0.75s;
+            -webkit-transition: width 0.75s linear; 
 
             display: flex;
             flex: 0 0 auto;
@@ -202,8 +207,10 @@ and (min-width : 280px) {
                     width: 20px;
                     height: 20px;
 
-                    &:hover {
-                        box-shadow: $shadow-inner-small;
+                    @media (hover: hover) {
+                        &:hover {
+                            box-shadow: $shadow-inner-small;
+                        }
                     }
                 }
             }
@@ -273,6 +280,7 @@ and (min-width : 768px)  {
         &__slider {
             &--buttons {
                 &-left, &-right {
+
                     svg {
                         width: 30px;
                         height: 30px;
@@ -312,7 +320,7 @@ and (min-width : 1224px) {
 
         &__wrapper {
             padding: 60px 55px;
-            height: calc(100vh - 160px);
+            // height: calc(100vh - 160px);
         }
         &__name {
             font-size: 2.5em;
@@ -356,6 +364,7 @@ and (min-width : 1224px) {
             &--buttons {
                 &-left, &-right {
                     svg {
+                        cursor: pointer;
                         width: 35px;
                         height: 35px;
                     }
