@@ -1,5 +1,5 @@
 //Import Libraries
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WorkItem from './components/work/WorkItem';
 //import ProjectItemList from './components/ProjectItemList';
 
@@ -112,18 +112,31 @@ const App = () => {
 
   const [x, setX] = useState(0);
   const [margin, setMargin] = useState(0);
-  var windowWidth = window.innerWidth;
-  var windowHeight = window.innerHeight;
+  const [dimension, setDimension] = useState({
+    windowHeight: window.innerHeight,
+    windowWidth: window.innerWidth
+  })
 
-  function resize() {
-    windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
-  }
+  var ua = window.navigator.userAgent;
+  var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
 
-  window.onresize = resize;
+  useEffect(() => {
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimension({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight
+      })
+    }, 1000)
+
+    window.addEventListener('resize', debouncedHandleResize);
+
+    return _ => {
+      window.removeEventListener('resize', debouncedHandleResize)
+    }
+  })
 
   const scrollLeft = () => {
-    if (windowWidth >= 1224) {
+    if (dimension.windowWidth >= 1224) {
       if (x === 0) {
         setX(-400 * (projects.projectitems.length - 6));
         setMargin(margin - 240);
@@ -143,7 +156,7 @@ const App = () => {
   }
 
   const scrollRight = () => {
-    if (windowWidth >= 1224) {
+    if (dimension.windowWidth >= 1224) {
       if (x === -400 * (projects.projectitems.length - 6)) {
         setX(0)
         setMargin(0);
@@ -165,7 +178,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="Profile__wrapper" style={windowWidth >= 1224 ? {height: `calc(${windowHeight}px - 160px)`} : {height: `calc(${windowHeight}px - 100px)`}}>
+      <div className="Profile__wrapper" style={iOS ? {height: `calc(${dimension.windowHeight}px - 100px)`} : dimension.windowWidth >= 1224 ? {height: `calc(100vh - 160px)`} : {height: `calc(100vh - 100px)`}}>
         <div className="Profile">
           <div className="Profile__outer">
           <div className="Profile__top">
@@ -214,7 +227,8 @@ const App = () => {
             <div className="Work__container--inner">
                 {projects.projectitems.map((project, index) => {
                   return (
-                    <div key={index} className="Work__item" style={{transform: `translateX(calc(${x}% + ${margin}px))`, WebkitTransform: `translateX(calc(${x}% + ${margin}px))`}}>
+                    <div key={index} className="Work__item" style={iOS ? {transition: `width 0.75s linear`, transform: `translateX(calc(${x}% + ${margin}px))`, WebkitTransform: `translateX(calc(${x}% + ${margin}px))`} :
+                                                                         {transition: `0.75s`, transform: `translateX(calc(${x}% + ${margin}px))`, WebkitTransform: `translateX(calc(${x}% + ${margin}px))`}}>
                       <WorkItem work={project}/>
                     </div>
                   )
@@ -267,6 +281,17 @@ const App = () => {
         </div>
       </div> */
   );
+}
+
+function debounce(fn, ms) {
+  let timer
+  return _ => {
+    clearTimeout(timer)
+    timer = setTimeout(_ => {
+      timer = null
+      fn.apply(this, arguments)
+    }, ms)
+  };
 }
 
 export default App;
